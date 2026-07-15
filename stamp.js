@@ -1,10 +1,8 @@
-const fetch = require('node-fetch');
 const fs = require('fs');
 
 const URL = 'https://script.google.com/macros/s/AKfycbx89YEMm7DT_W3T7gT0dUUjYpybzmzj0DryaruiIdC8DaihpOV5dBW6HiU-iARGh_Dq/exec';
 
-// Format: wallet|handle (satu per baris)
-// Contoh: 0xABC123...|namahandle
+// Format wallets.txt: wallet|handle (satu per baris)
 const lines = fs.readFileSync('wallets.txt', 'utf-8')
   .split('\n').map(w => w.trim()).filter(Boolean);
 
